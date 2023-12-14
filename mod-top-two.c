@@ -1,5 +1,5 @@
 #include "monty.h"
-
+   
 /**
  * mod_top_two - multiplies the top two elements of the stack.
  * @top: Pointer to a pointer pointing to top node of the stack.
@@ -8,12 +8,10 @@
 void mod_top_two(stack_t **top, unsigned int line_number)
 {
 int result;
-if (top == NULL || *top == NULL || (*top)->next == NULL)
-handle_error(3, line_number, "mod");
+if (top == NULL || *top == NULL || (*stack)->next == NULL)
+handle_error(8, line_number);
 if ((*top)->n == 0)
-handle_error(2, line_number);
-if ((*top)->n == 0)
-handle_error(2, line_number);
+handle_error(8, line_number);
 *top = (*top)->next;
 result = (*top)->n % (*top)->prev->n;
 (*top)->n = result;
