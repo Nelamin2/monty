@@ -26,6 +26,11 @@ return (0);
  */
 stack_t *initiate_node(int n)
 {
+if(!n)
+{ 
+fprintf(stderr, "L%d: usage: push integer\n", line_number);
+exit(EXIT_FAILURE);
+}
 stack_t *new_node;
 new_node = malloc(sizeof(stack_t));
 if (new_node == NULL)
