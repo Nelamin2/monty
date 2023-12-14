@@ -5,6 +5,7 @@
  * @top: Pointer to a pointer pointing to top node of the stack.
  * @line_number: number of lines.
  */
+void handle_error(int code, ...);
 void div_top_two(stack_t **top, unsigned int line_number)
 {
 int result;
