@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <studio.h>
 /**
  * handle_error - Prints appropiate error messages determined by their error code.
  * @code: The error codes are the following:
@@ -27,11 +26,11 @@ fprintf(stderr, "USAGE: monty file\n");
 break;
 case 2:
 fprintf(stderr, "Error: Can't open file %s\n",
-va_arg(ag, char *));
+va_arg(argument, char *));
 break;
 case 3:
 line_number = va_arg(argument, int);
-operation = va_arg(ag, char *);
+operation = va_arg(argument, char *);
 fprintf(stderr, "L%d: unknown instruction %s\n", line_number, operation);
 break;
 case 4:
@@ -49,9 +48,9 @@ fprintf(stderr, "L%d: can't pop an empty stack\n",
 va_arg(argument, int));
 break;
 case 8:
-line_number = va_arg(ag, unsigned int);
+line_number = va_arg(argument, unsigned int);
 operation = va_arg(argument, char *);
-fprintf(stderr, "L%d: can't %s, stack too short\n", line_number, op);
+fprintf(stderr, "L%d: can't %s, stack too short\n", line_number, operation);
 break;
 case 9:
 fprintf(stderr, "L%d: division by zero\n",
@@ -63,7 +62,6 @@ break;
 free_elements();
 exit(EXIT_FAILURE);
 }
-}
 
 /**
  * stg_error - handles errors.
@@ -73,10 +71,10 @@ exit(EXIT_FAILURE);
  */
 void stg_error(int code, ...)
 {
-va_list argumrnt;
+va_list argument;
 int line_number;
-va_start(ag, error);
-line_number = va_arg(ag, int);
+va_start(argument, code);
+line_number = va_arg(argument, int);
 switch (code)
 {
 case 10:
