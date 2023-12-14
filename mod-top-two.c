@@ -14,7 +14,7 @@ if ((*top)->n == 0)
 handle_error(2, line_number);
 if ((*top)->n == 0)
 handle_error(2, line_number(*top) = (*top)->next;
-result = (*top)->n mod (*top)->prev->n;
+result = (*top)->n % (*top)->prev->n;
 (*top)->n = result;
 free((*top)->prev);
 (*top)->prev = NULL;

@@ -1,8 +1,7 @@
 #include "monty.h"
-stack_t *head = NULL;
 
 /**
- * main - entry point of the program 
+ * main - entry point of the program
  * @argc: arguments count
  * @argv: list of arguments
  * Return: always 0
@@ -10,6 +9,7 @@ stack_t *head = NULL;
 
 int main(int argc, char *argv[])
 {
+stack_t **head
 if (argc != 2)
 {
 fprintf(stderr, "USAGE: monty file\n");
@@ -32,11 +32,11 @@ if (new_node == NULL)
 err(4);
 new_node->next = NULL;
 new_node->prev = NULL;
-new-node->n = n;
+new_node->n = n;
 return (new_node);
 }
 /**
- * free_elemaents - Frees nodes in the stack.
+ * free_elements - Frees nodes in the stack.
  */
 void free_elements(void)
 {

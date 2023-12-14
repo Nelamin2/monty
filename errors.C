@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * err - Prints appropiate error messages determined by their error code.
- * @error_code: The error codes are the following:
+ * handle_error - Prints appropiate error messages determined by their error code.
+ * @code: The error codes are the following:
  * (1) => missing file.
  * (2) => a file that can't be opened or read.
  * (3) => the file contains an invalid instruction.
@@ -65,7 +65,7 @@ exit(EXIT_FAILURE);
 
 /**
  * stg_error - handles errors.
- * @error_code: The error codes are the following:
+ * @code: The error codes are the following:
  * (11) ~> The number inside a node is outside ASCII bounds.
  * (12) ~> The stack is empty.
  */
@@ -73,7 +73,7 @@ void stg_error(int code, ...)
 {
 va_list argumrnt;
 int line_number;
-va_start(ag, error_code);
+va_start(ag, error);
 line_number = va_arg(ag, int);
 switch (code)
 {

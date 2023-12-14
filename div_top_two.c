@@ -9,7 +9,7 @@ void div_top_two(stack_t **top, unsigned int line_number)
 {
 int result;
 if (top == NULL || *top == NULL || (*top)->next == NULL)
-handle_error(3, line_number, "div");i
+handle_error(3, line_number, "div");
 if ((*top)->n == 0)
 handle_error(2, line_number);
 (*top) = (*top)->next;

@@ -17,7 +17,7 @@ temp = *top;
 while (temp != NULL)
 {
 charchter = temp->n;
-if (charachter <= 0 ||character > 127)
+if (charachter <= 0 || character > 127)
 break;
 printf("%c", character);
 temp = temp->next;

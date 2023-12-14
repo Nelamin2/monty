@@ -7,7 +7,7 @@
  */
 void push_stack(stack_t **new_node, unsigned int line)
 {
- stack_t *tmp;
+stack_t *tmp;
 if (new_node == NULL || *new_node == NULL)
 {
 fprintf(stderr, "L%u: usage: push integer\n", line);
@@ -21,18 +21,18 @@ return;
 tmp = head;
 head = *new_node;
 head->next = tmp;
-head->prev = NULL; 
+head->prev = NULL;
 tmp->prev = head;
 }
 
 /**
  * pall_stack - prints all values on the stack.
  * @top: Pointer to the stack.
- * @ln: Line number of the opcode.
+ * @line: Line number of the opcode.
  */
 void pall_stack(stack_t **top, unsigned int line)
 {
-stack_t *current; 
+stack_t *current;
 current = top;
 (void)line;
 if (top == NULL)
@@ -40,7 +40,7 @@ exit(EXIT_FAILURE);
 while (current != NULL)
 {
 printf("%d\n", current->n);
-current = current->next;    
+current = current->next;
 }
 }
 
@@ -56,7 +56,7 @@ if (top == NULL || *top == NULL)
 handle_error(4, line_number);
 temp = *top;
 *top = temp->next;
-if (*top!= NULL)
+if (*top != NULL)
 (*top)->prev = NULL;
 free(temp);
 }
@@ -64,7 +64,7 @@ free(temp);
 /**
  * print_first - Prints thefirst element of the stack.
  * @top: Pointer to a pointer pointing to top node of the stack.
- * @line_number:  number of lines of the opcode.
+ * @line_number: number of lines of the opcode.
  */
 void print_first(stack_t **top, unsigned int line_number)
 {

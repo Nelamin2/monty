@@ -8,11 +8,11 @@
  * @format: Format specifier. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
  */
-void right_function(op_func fptr, char *opcode, char *value, int length, int format)
+void right_function(op_func fptr, char *opcode,
+char *value, int length, int format)
 {
 stack_t *node;
-int flag;
-int i;
+int flag, i;
 flag = 1;
 if (strcmp(opcode, "push") == 0)
 {
