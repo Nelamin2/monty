@@ -8,6 +8,6 @@
 void nop_function(stack_t **top, unsigned int line_number)
 {
 	(void)top;
-	(void)top;
+	(void)line_number;
 }
 

@@ -35,6 +35,7 @@ typedef struct instruction_s
 char *opcode;
 void (*f)(stack_t **top, unsigned int line_number);
 } instruction_t;
+
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 /*file operations*/
@@ -65,6 +66,8 @@ void top_char(stack_t **top, unsigned int line_number);
 void character_str(stack_t **top, __attribute__((unused))unsigned int line);
 void rotate_r(stack_t **top, __attribute__((unused))unsigned int line);
 void rotate_l(stack_t **top, __attribute__((unused))unsigned int line);
+void nop_function(stack_t **top, unsigned int line_number);
+void swap(stack_t **top, unsigned int line_number);
 /*Error hanlding*/
 void handle_error(int code, ...);
 void stg_error(int code, ...);

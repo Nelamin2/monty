@@ -33,7 +33,7 @@ tmp->prev = head;
 void pall_stack(stack_t **top, unsigned int line)
 {
 stack_t *current;
-current = top;
+current = *top;
 (void)line;
 if (top == NULL)
 exit(EXIT_FAILURE);
@@ -53,7 +53,7 @@ void pop_first(stack_t **top, unsigned int line_number)
 {
 stack_t *temp;
 if (top == NULL || *top == NULL)
-handle_error(4, line_number);
+handle_error(7, line_number);
 temp = *top;
 *top = temp->next;
 if (*top != NULL)
@@ -69,6 +69,6 @@ free(temp);
 void print_first(stack_t **top, unsigned int line_number)
 {
 if (top == NULL || *top == NULL)
-handle_error(5, line_number);
+handle_error(6, line_number);
 printf("%d\n", (*top)->n);
 }

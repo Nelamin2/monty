@@ -13,7 +13,8 @@ handle_error(3, line_number, "mod");
 if ((*top)->n == 0)
 handle_error(2, line_number);
 if ((*top)->n == 0)
-handle_error(2, line_number(*top) = (*top)->next;
+handle_error(2, line_number);
+*top = (*top)->next;
 result = (*top)->n % (*top)->prev->n;
 (*top)->n = result;
 free((*top)->prev);

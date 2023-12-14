@@ -9,7 +9,7 @@ void mul_top_two(stack_t **top, unsigned int line_number)
 {
 int result;
 if (top == NULL || *top == NULL || (*top)->next == NULL)
-handle_error(e, line_number, "mul");
+handle_error(8, line_number, "mul");
 (*top) = (*top)->next;
 result = (*top)->n * (*top)->prev->n;
 (*top)->n = result;

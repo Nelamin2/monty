@@ -1,5 +1,7 @@
+#define _GNU_SOURCE
 #include "monty.h"
-
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * read_file - reads a file
  * @fd: pointer to file descriptor
@@ -8,14 +10,16 @@
 
 void read_file(FILE *fd)
 {
+size_t length;
 int lines;
-format = 0;
-char *buffer
+char *buffer;
+int format;
 buffer = NULL;
-size_t length = 0;
+length = 0;
+format = 0;
 for (lines = 1; getline(&buffer, &length, fd) != -1; lines++)
 {
-format = parse_line(buffer, lines, format);
+format = parsing(buffer, lines, format);
 }
 free(buffer);
 }

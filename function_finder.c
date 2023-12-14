@@ -12,27 +12,27 @@ void function_finder(char *opcode, char *value, int length, int format)
 {
 int i;
 int flag;
-functions_t operationst[] = {
+instruction_t operations[] = {
 {"push", push_stack},
-{"pall", pull_stack},
-{"pint", show_top},
-{"pop", top_pop},
-{"nop", nop},
-{"swap", swap_elements},
-{"add", add_elements},
-{"sub", sub_elements},
-{"div", div_elements},
-{"mul", mul_elements},
-{"mod", mod_elements},
-{"pchar", print_char},
-{"pstr", print_str},
-{"rotl", rotl},
-{"rotr", rotr},
+{"pall", pall_stack},
+{"pint", print_first},
+{"pop", pop_first},
+{"nop", nop_function},
+{"swap", swap},
+{"add", sum_top_two},
+{"sub", sub_top_two},
+{"div", div_top_two},
+{"mul", mul_top_two},
+{"mod", mod_top_two},
+{"pchar", top_char},
+{"pstr", character_str},
+{"rotl", rotate_l},
+{"rotr", rotate_r},
 {NULL, NULL}
 };
 if (opcode[0] == '#')
 return;
-for (flag = 1, i = 0; Operations[i].opcode != NULL; i++)
+for (flag = 1, i = 0; operations[i].opcode != NULL; i++)
 {
 if (strcmp(opcode, operations[i].opcode) == 0)
 {
@@ -41,4 +41,5 @@ flag = 0;
 }
 }
 if (flag == 1)
-err(3, ln, opcode);
+handle_error(3, length, opcode);
+}

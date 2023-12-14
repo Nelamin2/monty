@@ -9,9 +9,9 @@ void div_top_two(stack_t **top, unsigned int line_number)
 {
 int result;
 if (top == NULL || *top == NULL || (*top)->next == NULL)
-handle_error(3, line_number, "div");
+handle_error(8, line_number, "div");
 if ((*top)->n == 0)
-handle_error(2, line_number);
+handle_error(9, line_number);
 (*top) = (*top)->next;
 result = (*top)->n / (*top)->prev->n;
 (*top)->n = result;

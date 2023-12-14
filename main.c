@@ -16,7 +16,7 @@ fprintf(stderr, "USAGE: monty file\n");
 exit(EXIT_FAILURE);
 }
 open_file(argv[1]);
-free_nodes();
+free_elements();
 return (0);
 }
 /**
@@ -29,7 +29,7 @@ stack_t *initiate_node(int n)
 stack_t *new_node;
 new_node = malloc(sizeof(stack_t));
 if (new_node == NULL)
-err(4);
+handle_error(7);
 new_node->next = NULL;
 new_node->prev = NULL;
 new_node->n = n;
