@@ -7,7 +7,7 @@
  */
 void push_stack(stack_t **new_node, unsigned int line)
 {
-stack_t *tmp;
+stack_t *temp;
 if (new_node == NULL || *new_node == NULL)
 {
 fprintf(stderr, "L%u: usage: push integer\n", line);
@@ -18,11 +18,11 @@ if (head == NULL)
 head = *new_node;
 return;
 }
-tmp = head;
+temp = head;
 head = *new_node;
-head->next = tmp;
+head->next = temp;
 head->prev = NULL;
-tmp->prev = head;
+temp->prev = head;
 }
 
 /**

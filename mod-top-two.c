@@ -11,7 +11,7 @@ int result;
 if (top == NULL || *top == NULL || (*top)->next == NULL)
 handle_error(8, line_number);
 if ((*top)->n == 0)
-handle_error(8, line_number);
+handle_error(9, line_number);
 *top = (*top)->next;
 result = (*top)->n % (*top)->prev->n;
 (*top)->n = result;
