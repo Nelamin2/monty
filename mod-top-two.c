@@ -8,7 +8,7 @@
 void mod_top_two(stack_t **top, unsigned int line_number)
 {
 int result;
-if (top == NULL || *top == NULL || (*stack)->next == NULL)
+if (top == NULL || *top == NULL || (*top)->next == NULL)
 handle_error(8, line_number);
 if ((*top)->n == 0)
 handle_error(8, line_number);
